@@ -4,24 +4,15 @@ using System.Text;
 
 namespace Snake
 {
-    class VerticalLine
+    class VerticalLine: Figure
     {
-        List<Point> vertline;
-
-        public VerticalLine (int x, int highy, int lowy, char c)
+        public VerticalLine (int highy, int lowy, int x, char c)
         {
-            vertline = new List<Point>();
-            for (int i = highy; i >= lowy; i--)
+            pList = new List<Point>();
+            for (int i = highy; i <= lowy; i++)
             {
                 Point p = new Point(x, i, c);
-                vertline.Add(p);
-            }
-        }
-        public void Draw()
-        {
-            foreach (Point p in vertline)
-            {
-                p.Draw();
+                pList.Add(p);
             }
         }
     }
