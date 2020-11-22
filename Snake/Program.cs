@@ -13,10 +13,23 @@ namespace Snake
             Point d2 = new Point(5, 2, '#');
             d2.Draw();
 
-            List<int> numlist = new List<int>();
-            numlist[0] = 1;
+            List<int> numlis = new List<int>();
+            numlis.Add(2);
+            numlis.Add(3);
 
-            
+            List<char> charlis = new List<char>();
+            charlis.Add('!');
+            charlis.Add('@');
+
+            foreach (char i in charlis)
+            {
+                Console.WriteLine(i);
+            }
+
+            List<Point> pointlist = new List<Point>();
+            pointlist.Add(d);
+            pointlist.Add(d2);
+
             Console.ReadLine();
         }
     }
