@@ -59,5 +59,20 @@ namespace Snake
                 direction = Directions.DOWN;
             }
         }
+
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if ( head.IsHit(food) )
+            {
+                food.s = head.s;
+                pList.Add(food);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
