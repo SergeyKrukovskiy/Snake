@@ -44,12 +44,17 @@ namespace Snake
             }
             else if (direction == Directions.UP)
             {
-                y += offset;
+                y -= offset;
             }
             else if (direction == Directions.DOWN)
             {
-                y -= offset;
+                y += offset;
             }
+        }
+        internal void clear()
+        {
+            s = ' ';
+            Draw();
         }
     }
 }

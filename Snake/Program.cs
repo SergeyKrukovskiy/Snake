@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Snake
 {
@@ -19,10 +20,23 @@ namespace Snake
 
             Point d = new Point(1, 3, '*');
             d.Draw();
-            Point d2 = new Point(2, 5, '*');
-            Snake snake = new Snake(d2, 3, Directions.RIGHT);
+
+            Point d2 = new Point(6, 9, '*');
+            Snake snake = new Snake(d2, 3, Directions.DOWN);
             snake.Drow();
 
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
             Console.ReadLine();
         }
     }
