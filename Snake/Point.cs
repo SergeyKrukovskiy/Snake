@@ -19,11 +19,37 @@ namespace Snake
             y = _y;
             s = _s;
         }
+        public Point (Point p)
+        {
+            x = p.x;
+            y = p.y;
+            s = p.s;
+        }
 
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(s);
+        }
+
+        public void Move (int offset, Directions direction)
+        {
+            if (direction == Directions.RIGHT)
+            {
+                x += offset;
+            }
+            else if(direction == Directions.LEFT)
+            {
+                x -= offset;
+            }
+            else if (direction == Directions.UP)
+            {
+                y += offset;
+            }
+            else if (direction == Directions.DOWN)
+            {
+                y -= offset;
+            }
         }
     }
 }
