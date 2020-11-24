@@ -12,14 +12,8 @@ namespace Snake
             Console.SetBufferSize(80, 25);
             
             // границы карты
-            HorizontalLine upline = new HorizontalLine(0, 78, 0, '+');
-            upline.Drow();
-            HorizontalLine downline = new HorizontalLine(0, 78, 24, '+');
-            downline.Drow();
-            VerticalLine leftline = new VerticalLine(0, 24, 0, '+');
-            leftline.Drow();
-            VerticalLine rightline = new VerticalLine(0, 24, 78, '+');
-            rightline.Drow();
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
 
             //создание еды
             FoodCreator foodCreator = new FoodCreator(80, 25, '$');
@@ -34,6 +28,13 @@ namespace Snake
             //управляемое движение змейки 
             while (true)
             {
+                if (walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    Console.Write("Игра закончена!");
+                    Console.ReadLine();
+                    break;
+                }
+                
                 if (snake.Eat(food) )
                 {
                     food = foodCreator.CreateFood();
